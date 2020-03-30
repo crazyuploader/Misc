@@ -1,0 +1,71 @@
+# Custom Functions
+
+kernel(){
+    cp /home/jungle/Desktop/work/bash/kernel.sh $(pwd)
+    echo "Copied Kernel Script 'kernel.sh' Successfully."
+    echo ""
+    echo "Running Script"
+    echo ""
+    ./kernel.sh
+    echo ""
+    echo "Removing 'Kernel' Script"
+    rm "kernel.sh"
+    rm -rf out/
+}
+
+tig(){
+    bash /home/jungle/Desktop/work/bash/git.sh
+}
+
+shck(){
+    echo "CHECK"
+    shellcheck *.sh
+}
+
+work(){
+    cd /home/jungle/Desktop/work/
+}
+
+and(){
+    cd /tome/jungle/Desktop/work/and/
+}
+
+update(){
+    sudo apt-get update
+    sudo apt-get -y upgrade
+    sudo apt-get -y autoremove
+}
+
+pyck(){
+    echo "CHECK"
+    cp /home/jungle/Desktop/work/bash/check_py.sh $(pwd)
+    ./check_py.sh
+    rm check_py.sh
+}
+
+upstream(){
+    git fetch https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git "v4.4.${1}"
+    git merge FETCH_HEAD
+}
+
+Builds(){
+    and
+    cd Builds
+}
+
+atest(){
+    echo "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git" | xclip -sel clip
+}
+
+cte(){
+    python3 -m venv env
+}
+
+acte(){
+    echo "Activating Virtual Env"
+    source env/bin/activate
+}
+
+changes(){
+    git status --porcelain | cut -d " " -f 3
+}
