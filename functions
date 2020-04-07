@@ -1,7 +1,7 @@
-# Custom Functions
+#<> Custom Functions
 
 kernel(){
-    cp ~/Desktop/work/bash/kernel.sh $(pwd)
+    cp ~/Desktop/work/bash/kernel.sh "$(pwd)"
     echo "Copied Kernel Script 'kernel.sh' Successfully."
     echo ""
     echo "Running Script"
@@ -23,11 +23,11 @@ shck(){
 }
 
 work(){
-    cd ~/Desktop/work/
+    cd ~/Desktop/work/ || echo "Doesn't exist!"
 }
 
 and(){
-    cd ~/Desktop/work/and/
+    cd ~/Desktop/work/and/ || echo "Doesn't exist!"
 }
 
 update(){
@@ -38,7 +38,7 @@ update(){
 
 pyck(){
     echo "CHECK"
-    cp ~/Desktop/work/bash/check_py.sh $(pwd)
+    cp ~/Desktop/work/bash/check_py.sh "$(pwd)"
     ./check_py.sh
     rm check_py.sh
 }
@@ -50,7 +50,7 @@ upstream(){
 
 Builds(){
     and
-    cd Builds
+    cd Builds || echo "Doesn't exist!"
 }
 
 atest(){
@@ -68,4 +68,18 @@ acte(){
 
 changes(){
     git status --porcelain | cut -d " " -f 3
+}
+
+latmer(){
+    git fetch https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git "${1}"
+    git merge FETCH_HEAD
+}
+
+krlink(){
+    echo "Kernel Latest Stable: https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git"
+    echo ""
+    echo "MSM 4.4: https://source.codeaurora.org/quic/la/kernel/msm-4.4"
+    echo "QCA 3.0: https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qcacld-3.0"
+    echo "WIFI host-cmn: https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qca-wifi-host-cmn"
+    echo "FW-API: https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/fw-api LA.UM.8.2.r2-01100-sdm660.0"
 }
