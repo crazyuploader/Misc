@@ -1,7 +1,7 @@
 # Custom Functions
 
 kernel(){
-    cp /home/jungle/Desktop/work/bash/kernel.sh $(pwd)
+    cp ~/Desktop/work/bash/kernel.sh $(pwd)
     echo "Copied Kernel Script 'kernel.sh' Successfully."
     echo ""
     echo "Running Script"
@@ -14,7 +14,7 @@ kernel(){
 }
 
 tig(){
-    bash /home/jungle/Desktop/work/bash/git.sh
+    bash ~/Desktop/work/bash/git.sh
 }
 
 shck(){
@@ -23,11 +23,11 @@ shck(){
 }
 
 work(){
-    cd /home/jungle/Desktop/work/
+    cd ~/Desktop/work/
 }
 
 and(){
-    cd /tome/jungle/Desktop/work/and/
+    cd ~/Desktop/work/and/
 }
 
 update(){
@@ -38,7 +38,7 @@ update(){
 
 pyck(){
     echo "CHECK"
-    cp /home/jungle/Desktop/work/bash/check_py.sh $(pwd)
+    cp ~/Desktop/work/bash/check_py.sh $(pwd)
     ./check_py.sh
     rm check_py.sh
 }
