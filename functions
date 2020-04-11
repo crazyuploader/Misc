@@ -31,9 +31,17 @@ and(){
 }
 
 update(){
+    if [[ -z "$(command -v sudo)" ]]; then
+    echo "Sudo Not Installed!"
+    apt-get update
+    apt-get upgrade -y
+    apt-get autoremove -y
+else
+    echo "Sudo Installed!"
     sudo apt-get update
-    sudo apt-get -y upgrade
-    sudo apt-get -y autoremove
+    sudo apt-get upgrade -y
+    sudo apt-get autoremove -y
+    fi
 }
 
 pyck(){
