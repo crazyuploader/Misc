@@ -96,3 +96,7 @@ dirstr(){
     sed -i '/```/,$d' README.md
     echo -e "\`\`\`$(tree -a -I "out|temp|*.class|.git")\n\`\`\`" >> README.md
 }
+
+nlf(){
+    git ls-files -z | while IFS= read -rd '' f; do tail -c1 < "$f" | read -r _ || echo >> "$f"; done
+}
