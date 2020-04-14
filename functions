@@ -91,3 +91,8 @@ krlink(){
     echo "WIFI host-cmn: https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qca-wifi-host-cmn"
     echo "FW-API: https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/fw-api"
 }
+
+dirstr(){
+    sed -i '/```/,$d' README.md
+    echo -e "\`\`\`$(tree -a -I "out|temp|*.class|.git")\n\`\`\`" >> README.md
+}
