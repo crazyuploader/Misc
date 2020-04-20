@@ -23,7 +23,11 @@ shck(){
 }
 
 work(){
-    cd ~/Desktop/work/ || echo "Doesn't exist!"
+    if [[ -z "${1}" ]]; then
+        cd ~/Desktop/work/ || echo "Doesn't exist!"
+    else
+        cd ~/Desktop/work/${1} || echo "Doesn't exist"
+    fi
 }
 
 and(){
