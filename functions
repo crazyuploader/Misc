@@ -40,6 +40,8 @@ update(){
     apt-get update
     apt-get upgrade -y
     apt-get autoremove -y
+    cd ~/Desktop/work
+    bash update.sh
 else
     echo "Sudo Installed!"
     sudo apt-get update
