@@ -40,14 +40,14 @@ update(){
     apt-get update
     apt-get upgrade -y
     apt-get autoremove -y
-    cd ~/Desktop/work
-    bash update.sh
 else
     echo "Sudo Installed!"
     sudo apt-get update
     sudo apt-get upgrade -y
     sudo apt-get autoremove -y
     fi
+    cd ~/Desktop/work || exit
+    bash update.sh
 }
 
 pyck(){
