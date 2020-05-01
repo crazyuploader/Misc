@@ -14,6 +14,9 @@ if [[ ${temp} = "1" ]]; then
   echo ""
   Update
   echo ""
+  echo "Installing Dependency, please wait!"
+  echo ""
+  pip install -r requirements.txt
   sleep 3
   bash build.sh
 else
