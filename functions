@@ -46,8 +46,6 @@ else
     sudo apt-get upgrade -y
     sudo apt-get autoremove -y
     fi
-    cd ~/Desktop/work || exit
-    bash update.sh
 }
 
 pyck(){
