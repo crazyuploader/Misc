@@ -16,6 +16,7 @@ if [[ ${temp} = "1" ]]; then
   echo ""
   echo "Installing Dependency, please wait!"
   echo ""
+  pip install --upgrade pip
   pip install -r requirements.txt
   sleep 3
   bash build.sh
