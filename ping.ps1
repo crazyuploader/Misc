@@ -14,7 +14,6 @@ echo "75.2.66.166"
 echo "google.com"
 echo "quicksight.ap-south-1.amazonaws.com"
 echo "quicksight.ap-southeast-1.amazonaws.com"
-echo "13.76.131.0"
 sleep 5
 echo "#############################################################" > result.txt
 echo "########=====OUTPUT======OF======THE======SCRIPT=====########" >> result.txt
@@ -45,10 +44,6 @@ echo ""
 clear
 echo "Ping @ quicksight.ap-southeast-1.amazonaws.com"
 ping -n 10 quicksight.ap-southeast-1.amazonaws.com | tee -a result.txt
-echo ""
-clear
-echo "Ping @ 13.76.131.0"
-ping -n 10 13.76.131.0 | tee -a result.txt
 echo ""
 clear
 echo "Script Finished!"
