@@ -1,53 +1,33 @@
-echo ""
-echo " ##############################################"
-echo " ########                              ########"
-echo " ########  Automatic Ping Test Script  ########"
-echo " ########                              ########"
-echo " ##############################################"
-echo ""
-echo ""
-echo "Going to ping the following servers -"
-echo ""
-echo "1.1.1.1"
-echo "8.8.8.8"
-echo "75.2.66.166"
-echo "google.com"
-echo "quicksight.ap-south-1.amazonaws.com"
-echo "quicksight.ap-southeast-1.amazonaws.com"
-sleep 5
-echo "#############################################################" > result.txt
-echo "########=====OUTPUT======OF======THE======SCRIPT=====########" >> result.txt
-echo "#############################################################" >> result.txt
-clear
-echo "Starting Ping Test..."
-sleep 2
-echo ""
-echo "Ping @ 1.1.1.1"
-ping -n 10 1.1.1.1 | tee -a result.txt
-echo ""
-clear
-echo "Ping @ 8.8.8.8"
-ping -n 10 8.8.8.8 | tee -a result.txt
-echo ""
-clear
-echo "Ping @ 75.2.66.166"
-ping -n 10 75.2.66.166 | tee -a result.txt
-echo ""
-clear
-echo "Ping @ google.com"
-ping -n 10 google.com | tee -a result.txt
-echo ""
-clear
-echo "Ping @ quicksight.ap-south-1.amazonaws.com"
-ping -n 10 quicksight.ap-south-1.amazonaws.com | tee -a result.txt
-echo ""
-clear
-echo "Ping @ quicksight.ap-southeast-1.amazonaws.com"
-ping -n 10 quicksight.ap-southeast-1.amazonaws.com | tee -a result.txt
-echo ""
-clear
-echo "Script Finished!"
-echo ""
-echo "Results are saved in 'result.txt' file"
-echo ""
+Write-Output ""
+Write-Output " ##############################################"
+Write-Output " ########                              ########"
+Write-Output " ########  Automatic Ping Test Script  ########"
+Write-Output " ########                              ########"
+Write-Output " ##############################################"
+Write-Output ""
+Write-Output ""
+Write-Output "Going to ping the following servers -"
+Write-Output ""
+$Servers = "1.1.1.1", "8.8.8.8", "75.2.66.166", "128.1.120.194", "google.com", "quicksight.ap-south-1.amazonaws.com", "quicksight.ap-southeast-1.amazonaws.com", "mumbaispeedtest1.airtel.in", "speedtestggn1.airtel.in", "speedtestchn1.airtel.in"
+foreach ($Server in $Servers) {
+    Write-Output $Server
+}
+Start-Sleep 5
+Write-Output "#############################################################" > result.txt
+Write-Output "########=====OUTPUT======OF======THE======SCRIPT=====########" >> result.txt
+Write-Output "#############################################################" >> result.txt
+Clear-Host
+Write-Output "Starting Ping Test..."
+Start-Sleep 2
+Write-Output ""
+foreach ($Server in $Servers) {
+    Write-Output "Ping @ $Server"
+    ping -n 10 $Server | Tee-Object -a result.txt
+    tracert $Server | Tee-Object -a result.txt
+    Clear-Host
+}
+Write-Output "Script Finished!"
+Write-Output ""
+Write-Output "Results are saved in 'result.txt' file"
+Write-Output ""
 pause 1
