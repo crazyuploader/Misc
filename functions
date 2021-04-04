@@ -106,3 +106,4 @@ nlf(){
 }
 
 alias lg="lazygit"
+alias pretty="npx prettier --write ."
