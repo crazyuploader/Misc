@@ -6,7 +6,7 @@ Write-Output " ########                              ########"
 Write-Output " ##############################################"
 Write-Output ""
 Write-Output ""
-Write-Output "Going to ping the following servers -"
+Write-Output "Going to ping and trace the following servers -"
 Write-Output ""
 $Servers = "1.1.1.1", "8.8.8.8", "75.2.66.166", "128.1.120.194", "google.com", "quicksight.ap-south-1.amazonaws.com", "quicksight.ap-southeast-1.amazonaws.com", "mumbaispeedtest1.airtel.in", "speedtestdel.airtelbroadband.in", "speedtestchn1.airtel.in"
 foreach ($Server in $Servers) {
