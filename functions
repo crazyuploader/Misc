@@ -1,22 +1,5 @@
 #<> Custom Functions
 
-kernel(){
-    cp ~/Desktop/work/bash/kernel.sh "$(pwd)"
-    echo "Copied Kernel Script 'kernel.sh' Successfully."
-    echo ""
-    echo "Running Script"
-    echo ""
-    ./kernel.sh
-    echo ""
-    echo "Removing 'Kernel' Script"
-    rm "kernel.sh"
-    rm -rf out/
-}
-
-tig(){
-    bash ~/Desktop/work/bash/git.sh
-}
-
 shck(){
     echo "CHECK"
     shellcheck *.sh
@@ -28,10 +11,6 @@ work(){
     else
         cd ~/Desktop/work/${1} || echo "Doesn't exist"
     fi
-}
-
-and(){
-    cd ~/Desktop/work/and/ || echo "Doesn't exist!"
 }
 
 update(){
@@ -55,20 +34,6 @@ pyck(){
     rm check_py.sh
 }
 
-upstream(){
-    git fetch https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git "v4.4.${1}"
-    git merge FETCH_HEAD
-}
-
-Builds(){
-    and
-    cd Builds || echo "Doesn't exist!"
-}
-
-atest(){
-    echo "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git" | xclip -sel clip
-}
-
 cte(){
     python3 -m venv env
 }
@@ -80,20 +45,6 @@ acte(){
 
 changes(){
     git status --porcelain | cut -d " " -f 3
-}
-
-latmer(){
-    git fetch https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git "${1}"
-    git merge FETCH_HEAD
-}
-
-krlink(){
-    echo "Kernel Latest Stable: https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git"
-    echo ""
-    echo "MSM 4.4: https://source.codeaurora.org/quic/la/kernel/msm-4.4"
-    echo "QCA 3.0: https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qcacld-3.0"
-    echo "WIFI host-cmn: https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qca-wifi-host-cmn"
-    echo "FW-API: https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/fw-api"
 }
 
 dirstr(){
