@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-LIST="1.1.1.1 8.8.8.8 75.2.66.166 128.1.120.194 google.com quicksight.ap-south-1.amazonaws.com quicksight.ap-southeast-1.amazonaws.com 103.196.11.10"
+LIST="1.1.1.1 8.8.8.8 128.1.120.194 213.179.210.198 google.com quicksight.ap-south-1.amazonaws.com quicksight.ap-southeast-1.amazonaws.com"
 
 echo "=================================="
 echo "=== Automatic Ping Test Script ==="
