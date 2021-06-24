@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-LIST="1.1.1.1 8.8.8.8 128.1.120.194 213.179.210.198 google.com quicksight.ap-south-1.amazonaws.com quicksight.ap-southeast-1.amazonaws.com"
+LIST="1.1.1.1 8.8.8.8 128.1.120.194 213.179.210.198 google.com quicksight.ap-south-1.amazonaws.com quicksight.ap-southeast-1.amazonaws.com mumbaispeedtest1.airtel.in speedtestdel.airtelbroadband.in speedtestchn1.airtel.in"
 
 echo "=================================="
 echo "=== Automatic Ping Test Script ==="
 echo "=================================="
 echo ""
 echo ""
-echo "Going to Ping Following Server(s) -"
+echo "Going to Ping/Trace Following Server(s) -"
 echo ""
 for SERVER in ${LIST}; do
     echo "${SERVER}"
@@ -25,6 +25,9 @@ for SERVER in ${LIST}; do
     echo "Ping @ ${SERVER}"
     echo ""
     ping -c 10 "${SERVER}" | tee -a result.txt
+    echo ""
+    echo "" >> result.txt
+    traceroute -A "${SERVER}" | tee -a result.txt
     clear
 done
 clear
