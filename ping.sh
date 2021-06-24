@@ -22,7 +22,7 @@ echo "=== Output of the Script ====" >> result.txt
 echo "=============================" >> result.txt
 for SERVER in ${LIST}; do
     echo "" >> result.txt
-    echo "Ping @ ${SERVER}"
+    echo "Ping/Trace @ ${SERVER}"
     echo ""
     ping -c 10 "${SERVER}" | tee -a result.txt
     echo ""
