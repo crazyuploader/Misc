@@ -58,3 +58,6 @@ nlf(){
 
 alias lg="lazygit"
 alias pretty="npx prettier --write ."
+PATH="$PATH:/home/jungle/.local/bin"
+export FLYCTL_INSTALL="/home/jungle/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
