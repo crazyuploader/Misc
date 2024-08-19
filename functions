@@ -56,8 +56,17 @@ nlf(){
     git ls-files -z | while IFS= read -rd '' f; do tail -c1 < "$f" | read -r _ || echo >> "$f"; done
 }
 
+generate_markdown_links() {
+    for dir in */; do
+        clean_name="${dir//[_\/]/ }"
+        clean_name="${clean_name% }"  # Remove any trailing space
+        original_name="${dir%/}"       # Remove trailing slash for the link
+        echo "- [$clean_name]($original_name)"
+    done
+}
+
 alias lg="lazygit"
 alias pretty="npx prettier --write ."
-PATH="$PATH:/home/jungle/.local/bin"
+alias ap="ansible-playbook"
 export FLYCTL_INSTALL="/home/jungle/.fly"
-export PATH="$FLYCTL_INSTALL/bin:$PATH"
+export PATH="$PATH:/home/jungle/.local/bin:/home/jungle/go/bin:/usr/local/go/bin:$FLYCTL_INSTALL/bin"
